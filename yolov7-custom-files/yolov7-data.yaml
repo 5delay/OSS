@@ -1,0 +1,11 @@
+#Dataset
+train: /jy/Data/LectureBank/train
+val: /jy/Data/LectureBank/val
+test: /jy/Data/MLPDataset
+
+# number of classes
+nc: 4
+
+# class names
+names: ['Formula','Picture','Table', 'Text']
+
