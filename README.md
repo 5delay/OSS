@@ -78,7 +78,10 @@ python detect.py --weights best_ckpt.pt --conf 0.25 --img-size 640 --source [you
 
 ## Reference
 YOLOv7 : <https://github.com/WongKinYiu/yolov7>
+
 DocLayNet : <https://github.com/DS4SD/DocLayNet>
+
 LectureBank : <https://github.com/Yale-LILY/LectureBank>
+
 MLPDataset : <https://github.com/dondongwon/MLPDataset>
 
