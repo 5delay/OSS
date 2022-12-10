@@ -19,7 +19,7 @@ PDF 문서와 강의 슬라이드는 문자 및 시각 자료로 구성되어 �
 <br><br>
 이러한 구조적 차이 외에도 온라인 강의에서 활용되는 슬라이드의 경우, PDF 문서와 화면 비율이 다르며, 교수자에 따라 슬라이드의 형식이 달라지기 때문에 레이아웃의 가변성이 높다. 따라서 이러한 차이점을 보완하기 위하여 강의 슬라이드 이미지 데이터 세트인 [LectureBank](https://github.com/Yale-LILY/LectureBank)와 [MLPDataset](https://github.com/dondongwon/MLPDataset)을 활용하였다. 
 <br><br>
-두 데이터셋은 speech-to-text와 OCR과 같은 자연어처리를 기반으로 추출한 강의 스크립트 및 텍스트 정보만을 제공하기 때문에 강의 자료 내 컨텐츠 레이아웃에 대한 주석 데이터가 포함되어 있지 않다. 그러므로 본 연구에서는Lecture Bank에서 300장, MLP Dataset에서 192장을 랜덤하게 추출하고, [Roboflow](https://roboflow.com/)를 활용하여 각 강의 슬라이드 내 컨텐츠의 레이아웃에 대한 주석 데이터를 생성하였다.
+두 데이터셋은 speech-to-text와 OCR과 같은 자연어처리를 기반으로 추출한 강의 스크립트 및 텍스트 정보만을 제공하기 때문에 강의 자료 내 컨텐츠 레이아웃에 대한 주석 데이터가 포함되어 있지 않다. 그러므로 Lecture Bank에서 300장, MLP Dataset에서 192장을 랜덤하게 추출하고, [Roboflow](https://roboflow.com/)를 활용하여 각 강의 슬라이드 내 컨텐츠의 레이아웃에 대한 주석 데이터를 생성하였다.
 
 
 
