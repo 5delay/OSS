@@ -15,6 +15,19 @@ pip install -r requirements.txt
 
 <br><br>
 
+## Detect Layout
+```shell 
+python detect.py --weights best_ckpt.pt --conf 0.25 --img-size 640 --source [your_data]
+```
+![inference-example](inference_example.png)
+
+
+## Demo Links 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12EqWaKcx2D7zapCZFdOlzlPEGjwvMAlr?usp=sharing)
+
+<br><br>
+
+
 ## Data
 [DocLayNet](https://github.com/DS4SD/DocLayNet)은 PDF 문서 이미지와 문서의 각 페이지에 대해 수동으로 생성된 문서 레이아웃 주석 데이터를 제공한다. 
 PDF 문서와 강의 슬라이드는 문자 및 시각 자료로 구성되어 있다는 점은 동일하지만, PDF 문서의 경우 footnote, page-footer, page-header 등 강의 슬라이드와 구조적인 차이를 보인다. 따라서 기존 DocLayNet 데이터셋의 11개 클래스를 4개의 클래스(Formula, Picture, Table, Text)로 병합 및 분할하여 사용한다. 
@@ -25,7 +38,6 @@ PDF 문서와 강의 슬라이드는 문자 및 시각 자료로 구성되어 �
 
 <br><br>
 
-
 ## Model Training
 레이아웃 인식을 위해 딥러닝 기반 Object Detection 네트워크인 YOLO 시리즈 중 2022년 제안된 [YOLOv7](https://github.com/WongKinYiu/yolov7)을 사용하였다. 강의 슬라이드 이미지 데이터의 경우, 모델 학습을 위하여 LectureBank 데이터 300장을 Train 240, Validation 60장으로 분할하여 사용하였고, MLPDataset 데이터 192장은 모델의 성능 평가에 활용하였다. 
 
@@ -34,7 +46,6 @@ python train.py --workers 4 --device 0 --batch-size 32 --data data/[data].yaml -
 ```
 
 <br><br>
-
 
 ## Performance
 
@@ -58,23 +69,8 @@ python test.py --data data/[data].yaml --img 640 --batch 32 --conf 0.001 --iou 0
 
 본 프로젝트에서는 mAP 0.743으로 가장 좋은 성능을 보였던 DocLayNet->LectureBank 모델의 예측 결과를 기반으로 527장의 이미지에 대한 Pseudo-label을 생성하였고, 정확도를 높이기 위하여 해당 label을 수동으로 수정하는 후보정하였다. 표의 마지막 행은 이러한 방식으로 생성한 데이터와 기존의 데이터를 합하여 학습한 모델의 test 결과를 나타낸다. 표에서 확인할 수 있듯이, mAP 0.763으로 기존 300장으로 학습하였을 때 대비 2.6%의 성능 향상을 보였다.
 
-
 <br><br>
 
-
-## Detect Layout
-```shell 
-python detect.py --weights best_ckpt.pt --conf 0.25 --img-size 640 --source [your_data]
-```
-![inference-example](inference_example.png)
-
-
-## Demo Links 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/12EqWaKcx2D7zapCZFdOlzlPEGjwvMAlr?usp=sharing)
-
-
-
-<br><br>
 
 ## Reference
 YOLOv7 : <https://github.com/WongKinYiu/yolov7>
