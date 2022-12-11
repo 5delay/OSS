@@ -16,7 +16,7 @@ pip install -r requirements.txt
 <br><br>
 
 ## Detect Layout
-[best_ckpt](https://drive.google.com/file/d/1n3huEmsJ4n59U6jfhWci2sZQjTgKZDQl/view?usp=share_link)
+[best_ckpt](https://drive.google.com/u/0/uc?id=1n3huEmsJ4n59U6jfhWci2sZQjTgKZDQl&export=download)
 ```shell 
 python detect.py --weights best_ckpt.pt --conf 0.25 --img-size 640 --source [your_data]
 ```
